@@ -1,0 +1,13 @@
+{
+  "name": "sparta_memo_site_1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/YongHyeon1231/sparta_memo_site_1.git",
+  "author": "YongHyeon1231 <120100530+YongHyeon1231@users.noreply.github.com>",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.6.0"
+  }
+}
