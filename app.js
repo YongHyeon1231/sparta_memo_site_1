@@ -1,5 +1,6 @@
 import express from 'express';
-import connect from './schemas/index.js'
+import connect from './schemas/index.js';
+import TodosRouter from './routes/todos.router.js';
 
 const app = express();
 const PORT = 3000;
@@ -22,7 +23,7 @@ router.get('/', (req, res) => {
 });
 
 // 해당하는 router를 전역미들웨어로 등록해서 /api가 붙은 경우에만 접근 가능하게 만들었다.
-app.use('/api', router);
+app.use('/api', [router, TodosRouter]);
 
 app.listen(PORT, () => {
   console.log(PORT, '포트로 서버가 열렸어요!');
