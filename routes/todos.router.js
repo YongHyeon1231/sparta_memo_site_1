@@ -22,7 +22,7 @@ router.post('/todos', async(req, res, next) => {
     const todoMaxOrder = await Todo.findOne().sort('-order').exec();
 
     // 3. 만약 존재한다면 현재 해야 할 일을 +1 하고, order 데이터가 존재하지 않다면, 1로 할당한다.
-    const order = todoMaxOrder ? todoMaxOrder + 1 : 1;
+    const order = todoMaxOrder ? todoMaxOrder.order + 1 : 1;
 
     // 4. 해야할 일 등록
     const todo = new Todo({value, order});
