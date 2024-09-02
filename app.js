@@ -16,6 +16,12 @@ app.use(express.urlencoded({ extended: true }));
 // ./assets위치에 있는 모든 파일을 서빙할 겁니다.
 app.use(express.static('./assets'));
 
+app.use((req, res, next) => {
+  console.log('Request URL:', req.originalUrl, ' - ', new Date());
+  next();
+});
+
+
 const router = express.Router();
 
 router.get('/', (req, res) => {

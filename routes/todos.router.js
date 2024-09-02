@@ -1,12 +1,29 @@
 import express from 'express';
+import Joi from 'joi';
 import Todo from '../schemas/todo.schemas.js';
 
 const router = express.Router();
 
+/**
+ * 1. `value` 데이터는 **필수적으로 존재**해야한다.
+2. `value` 데이터는 **문자열 타입**이어야한다.
+3. `value` 데이터는 **최소 1글자 이상**이어야한다.
+4. `value` 데이터는 **최대 50글자 이하**여야한다.
+5. 유효성 검사에 실패했을 때, 에러가 발생해야한다. 
+*/
+const createdTodoSchema = Joi.object({
+    value: Joi.string().min(1).max(50).required(),
+});
+
+
 /*** 할일 등록 API ***/
 router.post('/todos', async(req, res, next) => {
+    // 클라이언트에게 전달받은 데이터를 검증합니다.
+    const validation = await createdTodoSchema.validateAsync(req.body);
+
     // 1. 클라이언트로 부터 받아온 value 데이터를 가져온다.
-    const {value} = req.body;
+    // const {value} = req.body;
+    const {value} = validation;
 
     // 1-5. 만약, 클라이언트가 value 데이터를 전달하지 않았을 때,
     // 클라이언트에게 에러 메시지를 전달한다.
