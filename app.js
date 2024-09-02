@@ -22,7 +22,6 @@ app.use((req, res, next) => {
   next();
 });
 
-
 const router = express.Router();
 
 router.get('/', (req, res) => {

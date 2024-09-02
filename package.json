@@ -6,9 +6,15 @@
   "author": "YongHyeon1231 <120100530+YongHyeon1231@users.noreply.github.com>",
   "license": "MIT",
   "type": "module",
+  "scripts": {
+  "format": "prettier --write *.js **/*.js"
+  },
   "dependencies": {
     "express": "^4.19.2",
     "joi": "^17.13.3",
     "mongoose": "^8.6.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3"
   }
 }
