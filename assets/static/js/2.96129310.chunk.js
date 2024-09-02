@@ -4443,7 +4443,13 @@
         return e;
       }
       function ol() {
-        var e = { memoizedState: null, baseState: null, baseQueue: null, queue: null, next: null };
+        var e = {
+          memoizedState: null,
+          baseState: null,
+          baseQueue: null,
+          queue: null,
+          next: null,
+        };
         return null === Zo ? (Go.memoizedState = Zo = e) : (Zo = Zo.next = e), Zo;
       }
       function ll() {
@@ -5680,7 +5686,10 @@
                               (i.dependencies =
                                 null === e
                                   ? null
-                                  : { lanes: e.lanes, firstContext: e.firstContext })),
+                                  : {
+                                      lanes: e.lanes,
+                                      firstContext: e.firstContext,
+                                    })),
                           (n = n.sibling);
                       return ua(Do, (1 & Do.current) | 2), t.child;
                     }
@@ -5902,7 +5911,9 @@
               'function' !== typeof r &&
                 (null === Yi ? (Yi = new Set([this])) : Yi.add(this), ii(0, t));
               var e = t.stack;
-              this.componentDidCatch(t.value, { componentStack: null !== e ? e : '' });
+              this.componentDidCatch(t.value, {
+                componentStack: null !== e ? e : '',
+              });
             }),
           n
         );

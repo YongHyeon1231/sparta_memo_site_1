@@ -21,14 +21,20 @@
         p = {
           getTodos: function () {
             return f.a.get(''.concat(j, '/todos'), {
-              headers: { authorization: 'Bearer '.concat(localStorage.getItem('token')) },
+              headers: {
+                authorization: 'Bearer '.concat(localStorage.getItem('token')),
+              },
             });
           },
           addTodo: function (e) {
             return f.a.post(
               ''.concat(j, '/todos'),
               { value: e },
-              { headers: { authorization: 'Bearer '.concat(localStorage.getItem('token')) } },
+              {
+                headers: {
+                  authorization: 'Bearer '.concat(localStorage.getItem('token')),
+                },
+              },
             );
           },
           editTodo: (function () {
@@ -80,7 +86,9 @@
           })(),
           deleteTodo: function (e) {
             return f.a.delete(''.concat(j, '/todos/').concat(e), {
-              headers: { authorization: 'Bearer '.concat(localStorage.getItem('token')) },
+              headers: {
+                authorization: 'Bearer '.concat(localStorage.getItem('token')),
+              },
             });
           },
           register: function (e) {
@@ -102,7 +110,9 @@
           },
           getSelf: function () {
             return f.a.get(''.concat(j, '/users/me'), {
-              headers: { authorization: 'Bearer '.concat(localStorage.getItem('token')) },
+              headers: {
+                authorization: 'Bearer '.concat(localStorage.getItem('token')),
+              },
             });
           },
         },
@@ -409,7 +419,10 @@
           return Object(r.jsx)(r.Fragment, { children: Object(r.jsx)(O, {}) });
         };
       var x = function () {
-          return Object(r.jsx)('div', { className: 'App', children: Object(r.jsx)(g, {}) });
+          return Object(r.jsx)('div', {
+            className: 'App',
+            children: Object(r.jsx)(g, {}),
+          });
         },
         m = function (e) {
           e &&
